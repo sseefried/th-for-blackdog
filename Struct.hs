@@ -18,7 +18,11 @@ getCons = do
     _ -> return [] -- or throw an error
 
 --
--- A more detailed example where I get constructors that...
+-- A more detailed example where I turn constructors into
+-- patterns with one or more wildcard patterns in them. e.g.
+-- 
+-- @Str String@ becomes pattern @(Str _)@
+-- @A Int Float@ becomes pattern @(A _ _)@
 --
 consToPats :: Q [Pat]
 consToPats = do
